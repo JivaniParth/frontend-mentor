@@ -15,8 +15,13 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ### Screenshots
 
+<<<<<<< HEAD
 - Desktop View: images/Screenshot%202025-07-24%20162616.png
 - Mobile View: images/Screenshot%202025-07-24%20162552.png
+=======
+<img src="images\Screenshot 2025-07-24 162616.png">
+<img src="images\Screenshot 2025-07-24 162552.png">
+>>>>>>> e15af794e7dbaedc19ba7287fd179cb7451bf86b
 
 ### Links
 
