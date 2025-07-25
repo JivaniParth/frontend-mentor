@@ -22,7 +22,7 @@
     <div class="container">
       <div class="form-container">
         <h2>Contact Us</h2>
-        <form action="" method="post" class="contact-form">
+        <form method="post" id="contactForm" class="contact-form">
           <div class="form-name-group">
             <div class="form-group">
               <label class="form-label" for="first-name">First Name</label>
@@ -31,9 +31,10 @@
                 type="text"
                 id="first-name"
                 name="first-name"
-                required
               />
-              <span class="error-message hidden">This field is required</span>
+              <span class="error-message first-name-error hidden">
+                This field is required!
+              </span>
             </div>
             <div class="form-group">
               <label class="form-label" for="last-name">Last Name</label>
@@ -42,29 +43,26 @@
                 type="text"
                 id="last-name"
                 name="last-name"
-                required
               />
-              <span class="error-message hidden">This field is required</span>
+              <span class="error-message last-name-error hidden">
+                This field is required!
+              </span>
             </div>
           </div>
           <div class="form-group">
             <label class="form-label" for="email">Email Address</label>
-            <input
-              class="input-email"
-              type="email"
-              id="email"
-              name="email"
-              required
-            />
-            <span class="error-message invalid-email hidden">
-              Please enter a valid email address
+            <input class="input-email" type="text" id="email" name="email" />
+            <span class="error-message hidden" id="invalidEmail">
+              Please enter a valid email address!
             </span>
-            <span class="error-message hidden">This field is required</span>
+            <span class="error-message email-error hidden">
+              Please enter an email!
+            </span>
           </div>
           <div class="form-group">
             <label class="form-label" for="radio-query-type">Query Type</label>
             <div class="radio-group">
-              <div class="form-radio-group">
+              <div class="form-radio-group" id="queryTypeGeneralInquiry">
                 <input
                   class="input-radio"
                   type="radio"
@@ -73,7 +71,7 @@
                 />
                 <label for="general-enquiry"> General Enquiry </label>
               </div>
-              <div class="form-radio-group">
+              <div class="form-radio-group" id="queryTypeSupportRequest">
                 <input
                   class="input-radio"
                   type="radio"
@@ -83,7 +81,9 @@
                 <label for="support-request"> Support Request </label>
               </div>
             </div>
-            <span class="error-message hidden">This field is required</span>
+            <span class="error-message query-type-error hidden">
+              Please select a query type
+            </span>
           </div>
           <div class="form-group">
             <label class="form-label" for="message">Message</label>
@@ -92,24 +92,26 @@
               id="message"
               name="message"
               rows="5"
-              required
             ></textarea>
-            <span class="error-message hidden">This field is required</span>
+            <span class="error-message message-error hidden"
+              >This field is required!</span
+            >
           </div>
           <div class="form-group">
-            <div class="consent-group">
+            <div>
               <input
                 class="input-checkbox"
                 type="checkbox"
                 name="consent"
                 id="consent"
-                required
               />
               <label class="form-label" for="consent">
                 I consent to being contacted by the team
               </label>
-              <span class="error-message hidden">This field is required</span>
             </div>
+            <span class="error-message consent-error hidden">
+              To submit this form, please consent to being contacted
+            </span>
           </div>
           <div class="form-group">
             <button class="submit-btn" type="submit">Submit</button>
@@ -121,12 +123,11 @@
         </form>
       </div>
     </div>
-
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
       Coded by <a href="#">Your Name Here</a>.
     </div>
-    <script src="script.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>

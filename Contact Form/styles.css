@@ -50,6 +50,18 @@ label {
   color: rgba(43, 66, 70, 1);
 }
 
+.input-name:focus,
+.input-email:focus,
+.textarea-message:focus {
+  border: 2px solid rgba(12, 125, 105, 1);
+  outline: none;
+}
+
+.checked-query-type {
+  border: 1px solid rgba(12, 125, 105, 1);
+  background-color: rgba(223, 241, 231, 1);
+}
+
 .form-label::after {
   content: "*";
   padding: 0 0 0 0.5rem;
@@ -77,6 +89,7 @@ label {
   border: 1px solid rgba(43, 66, 70, 1);
   border-radius: 5px;
   padding: 0.5rem;
+  font-family: "Karla", sans-serif;
   background-color: transparent;
 }
 
