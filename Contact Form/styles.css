@@ -5,3 +5,100 @@
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
+
+.container {
+  background-color: rgba(223, 241, 231, 1);
+  min-height: 96vh;
+  display: flex;
+  align-items: center;
+}
+
+.form-container {
+  font-family: "Karla", sans-serif;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  min-width: 42vw;
+}
+
+.form-container h2 {
+  color: rgba(43, 66, 70, 1);
+}
+
+.hidden {
+  display: none;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.form-radio-group {
+  border: 1px solid rgba(43, 66, 70, 1);
+  border-radius: 7px;
+  padding: 0.5rem;
+}
+
+.form-label {
+  margin-bottom: 0.6rem;
+}
+
+label {
+  color: rgba(43, 66, 70, 1);
+}
+
+.form-label::after {
+  content: "*";
+  padding: 0 0 0 0.5rem;
+  color: rgba(12, 125, 105, 1);
+}
+
+.error-message {
+  color: rgba(215, 60, 60, 1);
+}
+
+.success-message {
+  color: rgba(12, 125, 105, 1);
+}
+
+.form-name-group,
+.radio-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.input-name,
+.input-email,
+.textarea-message {
+  border: 1px solid rgba(43, 66, 70, 1);
+  border-radius: 5px;
+  padding: 0.5rem;
+  background-color: transparent;
+}
+
+.textarea-message {
+  resize: none;
+}
+
+.input-radio {
+  accent-color: rgba(12, 125, 105, 1);
+  cursor: pointer;
+}
+
+.input-checkbox {
+  accent-color: rgba(12, 125, 105, 1);
+  border: 1px solid rgba(12, 125, 105, 1);
+}
+
+.submit-btn {
+  background-color: rgba(12, 125, 105, 1);
+  color: white;
+  border: 1px solid rgba(12, 125, 105, 1);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
