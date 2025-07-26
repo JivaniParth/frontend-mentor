@@ -24,7 +24,7 @@
   </head>
   <body>
     <div class="container">
-      <div class="success-message-container hidden">
+      <div class="success-message-container hidden" role="alert">
         <div class="success-message-div">
           <i class="fa-regular fa-circle-check"></i>
           <h5 class="success-message">Message Sent!</h5>
@@ -45,7 +45,10 @@
                 id="first-name"
                 name="first-name"
               />
-              <span class="error-message first-name-error hidden">
+              <span
+                class="error-message first-name-error hidden"
+                aria-live="polite"
+              >
                 This field is required!
               </span>
             </div>
@@ -57,7 +60,10 @@
                 id="last-name"
                 name="last-name"
               />
-              <span class="error-message last-name-error hidden">
+              <span
+                class="error-message last-name-error hidden"
+                aria-live="polite"
+              >
                 This field is required!
               </span>
             </div>
@@ -65,10 +71,14 @@
           <div class="form-group">
             <label class="form-label" for="email">Email Address</label>
             <input class="input-email" type="text" id="email" name="email" />
-            <span class="error-message hidden" id="invalidEmail">
+            <span
+              class="error-message hidden"
+              id="invalidEmail"
+              aria-live="polite"
+            >
               Please enter a valid email address!
             </span>
-            <span class="error-message email-error hidden">
+            <span class="error-message email-error hidden" aria-live="polite">
               Please enter an email!
             </span>
           </div>
@@ -94,7 +104,10 @@
                 <label for="support-request"> Support Request </label>
               </div>
             </div>
-            <span class="error-message query-type-error hidden">
+            <span
+              class="error-message query-type-error hidden"
+              aria-live="polite"
+            >
               Please select a query type!
             </span>
           </div>
@@ -106,7 +119,7 @@
               name="message"
               rows="5"
             ></textarea>
-            <span class="error-message message-error hidden"
+            <span class="error-message message-error hidden" aria-live="polite"
               >This field is required!</span
             >
           </div>
@@ -122,7 +135,7 @@
                 I consent to being contacted by the team
               </label>
             </div>
-            <span class="error-message consent-error hidden">
+            <span class="error-message consent-error hidden" aria-live="polite">
               To submit this form, please consent to being contacted
             </span>
           </div>

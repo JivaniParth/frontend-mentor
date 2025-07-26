@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     inputElement.addEventListener("input", function () {
       if (inputElement.value.trim() !== "") {
         Array.from(errorElements).forEach((el) => el.classList.add("hidden"));
+        inputElement.removeAttribute("aria-invalid");
       }
     });
 
@@ -43,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
         Array.from(errorElements).forEach((el) =>
           el.classList.remove("hidden")
         );
+        inputElement.setAttribute("aria-invalid", "true");
       } else {
         inputElement.style.borderColor = "rgba(43, 66, 70, 1)";
       }
@@ -54,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
     email.addEventListener("input", function () {
       if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
         invalidEmailError.classList.add("hidden");
+        email.removeAttribute("aria-invalid");
       }
     });
 
@@ -66,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
     email.addEventListener("blur", function () {
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
         email.style.borderColor = "rgba(215, 60, 60, 1)";
+        email.setAttribute("aria-invalid", "true");
       } else {
         email.style.borderColor = "rgba(43, 66, 70, 1)";
       }
@@ -114,12 +118,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Reset error messages
   Array.from(firstNameError).forEach((el) => el.classList.add("hidden"));
+  firstName.removeAttribute("aria-invalid");
   firstName.style.borderColor = "rgba(43, 66, 70, 1)"; // Reset border color
 
   Array.from(lastNameError).forEach((el) => el.classList.add("hidden"));
+  lastName.removeAttribute("aria-invalid");
   lastName.style.borderColor = "rgba(43, 66, 70, 1)"; // Reset border color
 
   Array.from(emailError).forEach((el) => el.classList.add("hidden"));
+  email.removeAttribute("aria-invalid");
   email.style.borderColor = "rgba(43, 66, 70, 1)"; // Reset border color
 
   invalidEmailError.classList.add("hidden");
@@ -144,6 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (firstName.value.trim() === "") {
       firstNameError[0].classList.remove("hidden");
       firstName.style.borderColor = "rgba(215, 60, 60, 1)";
+      firstName.setAttribute("aria-invalid", "true");
       isValid = false;
     }
 
@@ -151,6 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (lastName.value.trim() === "") {
       lastNameError[0].classList.remove("hidden");
       lastName.style.borderColor = "rgba(215, 60, 60, 1)";
+      lastName.setAttribute("aria-invalid", "true");
       isValid = false;
     }
 
@@ -158,10 +167,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (email.value.trim() === "") {
       emailError[0].classList.remove("hidden");
       email.style.borderColor = "rgba(215, 60, 60, 1)";
+      email.setAttribute("aria-invalid", "true");
       isValid = false;
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
       invalidEmailError.classList.remove("hidden");
       email.style.borderColor = "rgba(215, 60, 60, 1)";
+      email.setAttribute("aria-invalid", "true");
       isValid = false;
     }
 
@@ -175,6 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (message.value.trim() === "") {
       messageError[0].classList.remove("hidden");
       message.style.borderColor = "rgba(215, 60, 60, 1)";
+      message.setAttribute("aria-invalid", "true");
       isValid = false;
     }
 
