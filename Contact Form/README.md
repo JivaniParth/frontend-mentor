@@ -4,7 +4,7 @@ This is my solution to the [Contact Form challenge on Frontend Mentor](https://w
 
 ## 🚀 Live Demo
 
-🔗 [View Live Site](https://contactformbypj.com)  
+🔗 [View Live Site](https://contactformbypj.netlify.com)  
 📁 [View Repository](https://github.com/jivaniparth/frontend-mentor/contact-form)
 
 ---
