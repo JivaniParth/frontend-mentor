@@ -1,6 +1,6 @@
-# Frontend Mentor - Contact form solution
+# Frontend Mentor - Mortgage repayment calculator solution
 
-This is a solution to the [Contact form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/contact-form--G-hYlqKJj). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Mortgage repayment calculator challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/mortgage-repayment-calculator-Galx1LXK73). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
 ## Table of contents
 
@@ -24,12 +24,9 @@ This is a solution to the [Contact form challenge on Frontend Mentor](https://ww
 
 Users should be able to:
 
-- Complete the form and see a success toast message upon successful submission
-- Receive form validation messages if:
-  - A required field has been missed
-  - The email address is not formatted correctly
+- Input mortgage information and see monthly repayment and total repayment amounts after submitting the form
+- See form validation messages if any field is incomplete
 - Complete the form only using their keyboard
-- Have inputs, error messages, and the success message announced on their screen reader
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
 
