@@ -19,8 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const consentError = document.getElementsByClassName("consent-error");
 
   // Success message elements
-  const successMessage = document.getElementsByClassName("success-message");
-  const thankYouMessage = document.getElementsByClassName("thank-you");
+  const successMessageContainer = document.getElementsByClassName(
+    "success-message-container"
+  );
 
   // Hide error message and red border on input
   function hideErrorMessage(inputElement, errorElements) {
@@ -111,32 +112,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Reset error messages
+  Array.from(firstNameError).forEach((el) => el.classList.add("hidden"));
+  firstName.style.borderColor = "rgba(43, 66, 70, 1)"; // Reset border color
+
+  Array.from(lastNameError).forEach((el) => el.classList.add("hidden"));
+  lastName.style.borderColor = "rgba(43, 66, 70, 1)"; // Reset border color
+
+  Array.from(emailError).forEach((el) => el.classList.add("hidden"));
+  email.style.borderColor = "rgba(43, 66, 70, 1)"; // Reset border color
+
+  invalidEmailError.classList.add("hidden");
+  Array.from(messageError).forEach((el) => el.classList.add("hidden"));
+
+  Array.from(queryTypeError).forEach((el) => el.classList.add("hidden"));
+  message.style.borderColor = "rgba(43, 66, 70, 1)"; // Reset border color
+
+  Array.from(consentError).forEach((el) => el.classList.add("hidden"));
+
+  // Reset success messages
+  Array.from(successMessageContainer).forEach((el) =>
+    el.classList.add("hidden")
+  );
+
   // Form submission event listener
   contactForm.addEventListener("submit", function (event) {
     event.preventDefault();
     let isValid = true;
-
-    // Reset error messages
-    Array.from(firstNameError).forEach((el) => el.classList.add("hidden"));
-    firstName.style.borderColor = "rgba(43, 66, 70, 1)"; // Reset border color
-
-    Array.from(lastNameError).forEach((el) => el.classList.add("hidden"));
-    lastName.style.borderColor = "rgba(43, 66, 70, 1)"; // Reset border color
-
-    Array.from(emailError).forEach((el) => el.classList.add("hidden"));
-    email.style.borderColor = "rgba(43, 66, 70, 1)"; // Reset border color
-
-    invalidEmailError.classList.add("hidden");
-    Array.from(messageError).forEach((el) => el.classList.add("hidden"));
-
-    Array.from(queryTypeError).forEach((el) => el.classList.add("hidden"));
-    message.style.borderColor = "rgba(43, 66, 70, 1)"; // Reset border color
-
-    Array.from(consentError).forEach((el) => el.classList.add("hidden"));
-
-    // Reset success messages
-    Array.from(successMessage).forEach((el) => el.classList.add("hidden"));
-    Array.from(thankYouMessage).forEach((el) => el.classList.add("hidden"));
 
     // Validate first name
     if (firstName.value.trim() === "") {
@@ -184,17 +186,47 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Show success message if form is valid
     if (isValid) {
-      Array.from(successMessage).forEach((el) => el.classList.remove("hidden"));
-      Array.from(thankYouMessage).forEach((el) =>
+      Array.from(successMessageContainer).forEach((el) =>
         el.classList.remove("hidden")
       );
+      updateMargin();
     }
 
     // Reset success message after 3 seconds
     setTimeout(() => {
-      Array.from(successMessage).forEach((el) => el.classList.add("hidden"));
-      Array.from(thankYouMessage).forEach((el) => el.classList.add("hidden"));
-      contactForm.reset();
+      Array.from(successMessageContainer).forEach((el) =>
+        el.classList.add("hidden")
+      );
+      updateMargin();
+      if (isValid === true) {
+        contactForm.reset();
+      }
     }, 3000);
   });
+
+  // Setting margin of form container using media query
+  function updateMargin() {
+    const formContainer = document.getElementById("formContainer");
+
+    const condition = Array.from(successMessageContainer).forEach((el) =>
+      el.classList.contains("hidden")
+    );
+
+    const mediaQuery = window.matchMedia("max-Width:426px");
+
+    if (condition && mediaQuery.matches) {
+      formContainer.style.margin = "4rem 2rem";
+    } else if (condition && !mediaQuery.matches) {
+      formContainer.style.margin = "0 auto";
+    } else if (!condition && mediaQuery.matches) {
+      formContainer.style.margin = "0 2rem 4rem";
+    } else {
+      formContainer.style.margin = "auto";
+    }
+  }
+
+  updateMargin();
+
+  window.addEventListener("load", updateMargin);
+  window.addEventListener("resize", updateMargin);
 });

@@ -10,12 +10,12 @@
   background-color: rgba(223, 241, 231, 1);
   min-height: 96vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 .form-container {
   font-family: "Karla", sans-serif;
-  margin: 0 auto;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 8px;
@@ -40,6 +40,17 @@
   border: 1px solid rgba(43, 66, 70, 1);
   border-radius: 7px;
   padding: 0.5rem;
+}
+
+.form-radio-group:hover,
+.form-radio-group label:hover,
+.form-name-group .form-group .input-name:hover,
+.form-group .textarea-message:hover,
+.form-group .input-email:hover,
+.form-group .consent-group:hover,
+.form-group .consent-group .input-checkbox:hover,
+.form-group .consent-group .form-label:hover {
+  cursor: pointer;
 }
 
 .form-label {
@@ -72,8 +83,27 @@ label {
   color: rgba(215, 60, 60, 1);
 }
 
-.success-message {
-  color: rgba(12, 125, 105, 1);
+.success-message-container {
+  margin: 1.5rem auto 0;
+  background-color: rgba(43, 66, 70, 1);
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+  font-family: "Karla", sans-serif;
+}
+
+.success-message-container p {
+  margin-bottom: 0;
+}
+
+.success-message-div {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+.success-message-div .success-message {
+  margin: auto 0 auto 1rem;
 }
 
 .form-name-group,
@@ -114,4 +144,29 @@ label {
   border-radius: 5px;
   padding: 0.5rem 1rem;
   cursor: pointer;
+}
+
+@media (max-width: 426px) {
+  .form-container {
+    max-width: 75vw;
+  }
+
+  .success-message-container {
+    max-width: 60vw;
+  }
+
+  .form-container h2 {
+    margin-top: 0;
+  }
+
+  .form-group.submit {
+    margin-bottom: 0;
+  }
+
+  .form-name-group,
+  .radio-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
 }
