@@ -42,4 +42,6 @@ function mortgageCalculator() {
     totalPayment = totalPaymentCalc;
     totalInterest = totalInterestCalc;
   };
+
+  calculateMortgage();
 }
