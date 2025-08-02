@@ -1,1 +1,135 @@
 @import "tailwindcss";
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url(./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf),
+    url(./assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+.mortgage {
+  background-color: rgb(227, 243, 253);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.mortgage-calculator {
+  width: 66%;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.mortgage-calculator-main {
+  padding: 2rem 1.5rem;
+  font-family: "Plus Jakarta Sans";
+}
+
+.mortgage-calculator-main .heading-container {
+  margin-bottom: 10px;
+}
+
+.mortgage-calculator-main .heading-container p {
+  margin: 0 !important;
+  color: rgb(107, 148, 168);
+  text-decoration: underline;
+  font-size: small;
+}
+
+.mortgage-calculator-main .heading-container h5 {
+  color: rgb(18, 47, 63);
+  font-weight: bold;
+}
+
+.mortgage-calculator-display {
+  background-color: rgb(18, 47, 63);
+  border-radius: 0px 15px 15px 50px;
+  padding: 1.5rem;
+  font-family: "Plus Jakarta Sans";
+}
+
+.mortgage-calculator-display p {
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgb(107, 148, 168);
+  margin: 10px 0;
+}
+
+.mortgage-calculator-display img {
+  width: 40%;
+  margin: 25px 0;
+}
+
+.form-group label {
+  color: rgb(107, 148, 168);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: rgb(215, 218, 47);
+  border-radius: 20px !important;
+  padding: 10px 15px;
+  margin: 30px 0 0 !important;
+  width: 65%;
+}
+
+button img {
+  height: 16px;
+}
+
+button p {
+  margin: 0;
+  font-size: small;
+  font-weight: bold;
+}
+
+.form-term-rate-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+}
+
+.form-group label {
+  font-size: small;
+  font-weight: 600;
+  margin: 15px 0 5px;
+}
+
+.input-group {
+  border: 1px solid rgb(107, 148, 168);
+  border-radius: 7px;
+  margin: 5px 0 0;
+}
+
+span.input-group-text {
+  background-color: rgb(227, 243, 253);
+  color: hsl(200, 24%, 40%);
+  font-weight: bold;
+}
+
+.form-radio-group {
+  border: 1px solid rgb(107, 148, 168);
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px 0 10px;
+  font-weight: bold;
+}
+
+.form-radio-group label {
+  color: rgb(18, 47, 63);
+  font-size: medium;
+  margin: auto;
+}
+
+input[type="radio"] {
+  margin: 0 10px;
+}
